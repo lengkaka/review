@@ -1,0 +1,77 @@
+<!DOCTYPEhtml>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>review</title>
+        <link href="./assets/css/bootstrap.css" rel="stylesheet">
+        <link href="./assets/css/application.css" rel="stylesheet">
+        <link href="./assets/css/flexslider.css" rel="stylesheet">
+        <script src="./lib/jquery.js"></script>
+        <script src="./lib/jquery.flexslider.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <a href="/" class="logo"></a>
+                <ul class="social">
+                    <li class="social-twitter"><a href="http://twitter.com/foundationkr" class="twitter"></a></li>
+                    <li class="social-facebook"><a href="http://www.facebook.com/pages/Foundation/121495347950603" class="facebook"></a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="vedio">
+                    <img src="./assets/img/big/1.png" alt="..." class="img-rounded">
+                </div>
+            </div>
+            <section class="slider">
+                <div id="carousel" class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <img src="./assets/img/small/1.png" data-src="http://player.youku.com/player.php/sid/XNzE1NTA1MTY0/v.swf" des=""/>
+                        </li>
+                        <li>
+                            <img src="./assets/img/small/2.png" data-src="http://player.youku.com/player.php/sid/XNzQ4NDcwMjg4/v.swf" des="Slack创始人Stewart Butterfield part 1"/>
+                        </li>
+                        <li>
+                            <img src="./assets/img/small/2.png" data-src="http://player.youku.com/player.php/sid/XNzQ5NDUxMTU2/v.swf" des="Slack创始人Stewart Butterfield part 2"/>
+                        </li>
+                        <li>
+                            <img src="./assets/img/small/2.png" data-src="http://player.youku.com/player.php/sid/XNzUxNjMzOTg0/v.swf" des="Slack创始人Stewart Butterfield part 3"/>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="footer">
+            <div class="info">
+                <div class="links">
+                    <a href="/about_us" target="_blank">关于我们</a>
+                    <a href="/contact_us" target="_blank">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(function(){
+            $('#carousel').flexslider({
+                animation: "slide",
+                controlNav: false,
+                animationLoop: false,
+                slideshow: false,
+                itemWidth: 210,
+                itemMargin: 5,
+                after: function() {
+                    console.log(1);
+                }
+            });
+
+            $('#carousel li').on('click', function(e) {
+                var $target = $(e.currentTarget);
+                var $vedioDom = $($('#vedio-embed').html());
+                $vedioDom.attr('src', $target.find('img').attr('data-src'));
+                $('.content .vedio').html($vedioDom);
+            });
+        });
+    </script>
+    <script type="html" id="vedio-embed"><embed src="" allowFullScreen="true" quality="high" width="600" height="500" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" flashvars="isAutoPlay=true"></embed></script>
+</html>

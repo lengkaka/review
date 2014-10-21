@@ -1,0 +1,150 @@
+body {
+    height: 100%;
+    background-color: #f9f9fb;
+
+}
+
+div {
+    display: block;
+}
+
+.header {
+    height: 65px;
+    width: 100%;
+    position: fixed;
+    background-color: #333c4e;
+    z-index: 10;
+}
+
+.logo, .logo:visited {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    display: block;
+    float: left;
+    width: 250px;
+    height: 29px;
+    margin: 20px 0 0 40px;
+    background: url(../img/logo.png) no-repeat;
+}
+
+.logo:hover {
+    background-position-y: -49px;
+    border-color: rgba(255, 255, 255, 1);
+}
+
+ul {
+    list-style: none;
+}
+
+.social {
+    margin-right: 40px;
+    padding: 25px 0 0 0;
+    font-size: 13px;
+    line-height: 20px;
+    float: right;
+}
+
+.social li {
+    float: left;
+}
+
+.social li.social-twitter {
+    padding-right: 20px;
+}
+
+.social li a.twitter, .social li a.twitter:visited {
+    margin: -4px 0 0 0;
+    width: 96px;
+    height: 23px;
+    font-size: 20px;
+    background: url(../img/twitter-logo.png) no-repeat;
+    display: block;
+}
+
+.social li a.twitter:hover {
+    background-position-y: -23px;
+}
+
+.social li a.facebook, .social li a.facebook:visited {
+    margin: -4px 0 0 0;
+    width: 103px;
+    height: 23px;
+    font-size: 20px;
+    background: url(../img/facebook-logo.png) no-repeat;
+    display: block;
+}
+
+.social li a.facebook:hover {
+    background-position-y: -23px;
+}
+
+.content {
+    margin-bottom: 30px;
+    min-height: 567px;
+    padding-top: 100px;
+}
+
+.vedio {
+    margin: 0 auto;
+    width: 600px;
+    position: relative;
+}
+
+.scrollbar {
+    height: 8px;
+    position: relative;
+    top: 350px;
+}
+
+.track {
+    margin: 0 10px;
+    height: 8px;
+    position: relative;
+}
+
+.thumb {
+    width: 410px;
+    height: 8px;
+    background: rgba(255,255,255,.2);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+
+.thumb .end {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.slides li {
+    padding: 2px;
+    cursor: pointer;
+}
+
+.footer {
+    height: 80px;
+    background: #222222;
+}
+
+.footer .info {
+    padding-top: 30px;
+    padding-left: 60px;
+}
+
+.footer .links {
+    float: left;
+}
+
+.footer .links a {
+    display: block;
+    float: left;
+    font-size: 12px;
+    color: #aaa;
+    margin-left: 20px
+}
