@@ -14,6 +14,7 @@ div {
     position: fixed;
     background-color: #333c4e;
     z-index: 10;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
 }
 
 .logo, .logo:visited {
@@ -79,6 +80,7 @@ ul {
     background-position-y: -23px;
 }
 
+/* content */
 .content {
     margin-bottom: 30px;
     min-height: 567px;
@@ -88,6 +90,7 @@ ul {
 .vedio {
     margin: 0 auto;
     width: 600px;
+    height: 500px;
     position: relative;
 }
 
@@ -127,6 +130,84 @@ ul {
     cursor: pointer;
 }
 
+.episode-slider {
+    background: #000;
+    border: 4px solid #fff;
+    border-radius: 4px;
+    /*padding-bottom: 196px;*/
+    box-shadow: 0 1px 4px rgba(0,0,0,.2);
+}
+
+.episode-block {
+    height: 360px;
+}
+
+.episode-list {
+    padding-left: 0;
+    height: 280px;
+}
+
+.episode-list li {
+    float: left;
+    padding: 3px;
+    opacity: .5;
+    width: 206px;
+    margin-left: 4px;
+    margin-top: 4px;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.episode-list li img {
+    border-radius: 3px;
+}
+
+.episode-list li.current {
+    opacity: 1;
+}
+
+.episode-list li .watch {
+    padding: 11px 14px 10px 14px;
+    font-size: 12px;
+    line-height: 12px;
+    color: rgb(255, 255, 255);
+    background: rgba(36, 152, 207, .8);
+    border-radius: 17px;
+    margin-left: 70px;
+    margin-top: -86px;
+    position: absolute;
+    display: none;
+}
+
+.episode-list li .episode-number {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, .9);
+    position: absolute;
+    margin-left: 150px;
+    margin-top: -200px;
+}
+
+.episode-list li .episode-title {
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+    color: rgb(34, 34, 34);
+    position: absolute;
+}
+
+.episode-list li .episode-description {
+    font-size: 10px;
+    line-height: 15px;
+    color: rgb(153, 153, 153);
+    display: block;
+    margin-top: 30px;
+}
+
+/* content */
+
 .footer {
     height: 80px;
     background: #222222;
@@ -147,4 +228,17 @@ ul {
     font-size: 12px;
     color: #aaa;
     margin-left: 20px
+}
+
+/*
+ * Global loading
+ */
+.loading {
+  padding: 30px 0;
+  text-align: center;
+}
+.loading span {
+  padding-left: 20px;
+  height: 44px;
+  background: url("../images/loading.gif") no-repeat 0 50%;
 }
