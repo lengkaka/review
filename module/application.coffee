@@ -5,6 +5,7 @@ define (require, exports, module) ->
     EpisodeListView = require 'view/Episodes'
     appController =
         showDefault: () ->
+            App.app.content.show new Vedio
             console.log arguments
             console.log 'play default'
         playEpisode: () ->
