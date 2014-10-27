@@ -90,6 +90,10 @@
                 var $vedioDom = $($('#vedio-embed').html());
                 $vedioDom.attr('src', $target.attr('data-src'));
                 $('.content .vedio').html($vedioDom);
+                // scroll to top
+                $('body').animate({
+                    scrollTop: 0
+                }, 800);
             });
 
             $('.episode-list li').hover(function() {
