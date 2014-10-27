@@ -1,6 +1,8 @@
 define (require, exports, module) ->
     # app_router
     router = require 'module/application_router'
+    VedioView = require 'view/Vedio'
+    EpisodeListView = require 'view/Episodes'
     appController =
         showDefault: () ->
             console.log arguments

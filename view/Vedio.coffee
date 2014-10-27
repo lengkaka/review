@@ -1,4 +1,4 @@
-defind (require, exports, model) ->
+defind (require, exports, module) ->
     ViewHelper = require 'view_helper'
     VedioView = Marionette.LayoutView.extend
         className: 'vedio'
