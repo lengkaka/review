@@ -1,4 +1,4 @@
-defind (require, exports, module) ->
+define (require, exports, module) ->
     ViewHelper = require 'view_helper'
 
     EpisodeView = Marionette.ItemView.extend
