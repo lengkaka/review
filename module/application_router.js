@@ -2,9 +2,10 @@
 (function() {
   define(function(require, exports, module) {
     var AppRouter;
-    return AppRouter = Backbone.Marionette.AppRouter.extend({
+    return AppRouter = Marionette.AppRouter.extend({
       appRoutes: {
-        "/:episode_num": "playEpisode",
+        "review(/)(index)": "showDefault",
+        "review/:episode_num": "playEpisode",
         "*notFound": "notFound"
       },
       onRoute: function(name, path, args) {

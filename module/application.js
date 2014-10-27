@@ -4,12 +4,16 @@
     var app, appController, router;
     router = require('module/application_router');
     appController = {
+      showDefault: function() {
+        console.log(arguments);
+        return console.log('play default');
+      },
       playEpisode: function() {
         console.log(arguments);
-        return console.log('play vedio');
+        return console.log('play episode');
       },
       notFound: function() {
-        console.log(arguemnts);
+        console.log(arguments);
         return console.log('not found');
       }
     };
@@ -27,9 +31,11 @@
         controller: appController
       });
     });
-    app.on('initialize:after', function(options) {
+    app.on('start', function(options) {
       if (Backbone.history) {
-        return Backbone.history.start();
+        return Backbone.history.start({
+          pushState: true
+        });
       }
     });
     return module.exprots = app;

@@ -1,0 +1,119 @@
+<!DOCTYPEhtml>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>review</title>
+        <link href="./assets/css/bootstrap.css" rel="stylesheet">
+        <link href="./assets/css/application.css" rel="stylesheet">
+        <link href="./assets/css/flexslider.css" rel="stylesheet">
+        <script src="./lib/jquery.js"></script>
+        <script src="./lib/jquery.flexslider.js"></script>
+        <script src="./lib/lodash.js"></script>
+        <script src="./lib/backbone.js"></script>
+        <script src="./lib/backbone.marionette.js"></script>
+        <script src="./lib/config.js"></script>
+        <script data-main="../bootstrap/main" src="./lib/require.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <a href="/" class="logo"></a>
+                <ul class="social">
+                    <li class="social-twitter"><a href="http://twitter.com/foundationkr" class="twitter"></a></li>
+                    <li class="social-facebook"><a href="http://www.facebook.com/pages/Foundation/121495347950603" class="facebook"></a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <div class="vedio">
+                    <img src="./assets/img/big/1.png" alt="..." class="img-rounded">
+                </div>
+            </div>
+            <div class="episode-block">
+                <div class="episode-slider">
+                    <ul class="episode-list">
+                        <li>
+                            <div review_episode="1" data-src="http://player.youku.com/player.php/sid/XNzQ3Mjg5OTY4/v.swf">
+                                <img src="./assets/img/small/1.png"/>
+                                <span class="watch">Watch</span>
+                                <span class="episode-number">4</span>
+                                <span class="episode-title">Timothy Tuttle</span>
+                                <span class="episode-description">Part1，MindMeld创始人，针对特定的内容，我们能比Siri和Google Now做的更好。</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div review_episode="1" data-src="http://player.youku.com/player.php/sid/XNzQ1MzQwNDY0/v.swf">
+                                <img src="./assets/img/small/2.png"/>
+                                <span class="watch">Watch</span>
+                                <span class="episode-number">3</span>
+                                <span class="episode-title">Timothy Tuttle</span>
+                                <span class="episode-description">Part2，MindMeld创始人，我们对星际迷航的想象，能通过由“语境”驱动的搜索实现。</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div review_episode="1" data-src="http://player.youku.com/player.php/sid/XNzM1MjExNDc2/v.swf">
+                                <img src="./assets/img/small/3.png"/>
+                                <span class="watch">Watch</span>
+                                <span class="episode-number">2</span>
+                                <span class="episode-title">Garry Tan</span>
+                                <span class="episode-description">Y Combinator合伙人，Make Something People Want，这就是最高准则。</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div review_episode="1" data-src="http://player.youku.com/player.php/sid/XNzE4OTY2MDEy/v.swf">
+                                <img src="./assets/img/small/4.png"/>
+                                <span class="watch">Watch</span>
+                                <span class="episode-number">1</span>
+                                <span class="episode-title">Mike McCue</span>
+                                <span class="episode-description">Flipboard创始人，如果你不小心把Web删了，一切都得重来，你创造的Web还会是今天的模样吗？</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="info">
+                <div class="links">
+                    <a href="/about_us" target="_blank">关于我们</a>
+                    <a href="/contact_us" target="_blank">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        $(function(){
+            $('[review_episode]').on('click', function(e) {
+                var $target = $(e.currentTarget);
+                if ($target.closest('li').hasClass('current')) {
+                    return;
+                }
+                var $vedioDom = $($('#vedio-embed').html());
+                $vedioDom.attr('src', $target.attr('data-src'));
+                $('.content .vedio').html($vedioDom);
+                // scroll to top
+                $('body').animate({
+                    scrollTop: 0
+                }, 800);
+            });
+
+            $('.episode-list li').hover(function() {
+                $(this).fadeTo(0, 1);
+                $(this).find('.watch').show();
+            }, function() {
+                if (!$(this).hasClass('current')) {
+                    $(this).fadeTo(0, 0.5);
+                    $(this).find('.watch').hide();
+                }
+            });
+
+            $('.episode-list li').click(function() {
+                $('.episode-list li').removeClass('current').find('.watch').hide();
+                $('.episode-list li').fadeTo(0, 0.5);
+                $(this).fadeTo(0, 1);
+                $(this).addClass('current');
+                $(this).find('.watch').show();
+            });
+        });
+    </script>
+    <script type="html" id="vedio-embed"><embed src="" allowFullScreen="true" quality="high" width="600" height="500" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" flashvars="isAutoPlay=true"></embed></script>
+</html>

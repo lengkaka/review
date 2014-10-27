@@ -1,7 +1,8 @@
 define (require, exports, module) ->
-    AppRouter = Backbone.Marionette.AppRouter.extend
+    AppRouter = Marionette.AppRouter.extend
         appRoutes:
-            "/:episode_num": "playEpisode"
+            "review(/)(index)": "showDefault"
+            "review/:episode_num": "playEpisode"
             "*notFound": "notFound"
         onRoute: (name, path, args) ->
             console.log arguments

@@ -2,11 +2,14 @@ define (require, exports, module) ->
     # app_router
     router = require 'module/application_router'
     appController =
+        showDefault: () ->
+            console.log arguments
+            console.log 'play default'
         playEpisode: () ->
             console.log arguments
-            console.log 'play vedio'
+            console.log 'play episode'
         notFound: () ->
-            console.log arguemnts
+            console.log arguments
             console.log 'not found'
     app = new Marionette.Application()
     app.addRegions
@@ -20,8 +23,8 @@ define (require, exports, module) ->
     app.addInitializer ->
         router = new router controller: appController
 
-    app.on 'initialize:after', (options) ->
+    app.on 'start', (options) ->
         if Backbone.history
-            do Backbone.history.start
+            Backbone.history.start pushState: true
 
     module.exprots = app

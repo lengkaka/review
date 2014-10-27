@@ -83,7 +83,6 @@ ul {
 /* content */
 .content {
     margin-bottom: 30px;
-    min-height: 567px;
     padding-top: 100px;
 }
 
@@ -211,6 +210,9 @@ ul {
 .footer {
     height: 80px;
     background: #222222;
+    bottom: 0px;
+    width: 100%;
+    position: absolute;
 }
 
 .footer .info {
@@ -240,5 +242,5 @@ ul {
 .loading span {
   padding-left: 20px;
   height: 44px;
-  background: url("../images/loading.gif") no-repeat 0 50%;
+  background: url("../img/loading.gif") no-repeat 0 50%;
 }
