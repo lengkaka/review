@@ -212,7 +212,7 @@ ul {
     background: #222222;
     bottom: 0px;
     width: 100%;
-    position: absolute;
+    position: fixed;
 }
 
 .footer .info {
