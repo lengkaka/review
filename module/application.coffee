@@ -13,6 +13,8 @@ define (require, exports, module) ->
             console.log arguments
             console.log 'play episode'
         notFound: ->
+            App.app.content.show new VedioView
+            App.app.episodes.show new EpisodeListView collection: @getEpisodes()
             console.log arguments
             console.log 'not found'
 

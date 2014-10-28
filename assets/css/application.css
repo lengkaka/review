@@ -173,8 +173,8 @@ ul {
     color: rgb(255, 255, 255);
     background: rgba(36, 152, 207, .8);
     border-radius: 17px;
-    margin-left: 70px;
-    margin-top: -86px;
+    margin-left: -130px;
+    margin-top: 86px;
     position: absolute;
     display: none;
 }
@@ -185,8 +185,7 @@ ul {
     font-weight: bold;
     color: rgba(255, 255, 255, .9);
     position: absolute;
-    margin-left: 150px;
-    margin-top: -200px;
+    margin-left: -40px;
 }
 
 .episode-list li .episode-title {
@@ -195,6 +194,8 @@ ul {
     font-weight: bold;
     color: rgb(34, 34, 34);
     position: absolute;
+    margin-left: -200px;
+    margin-top: 200px;
 }
 
 .episode-list li .episode-description {
@@ -210,9 +211,8 @@ ul {
 .footer {
     height: 80px;
     background: #222222;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
-    position: fixed;
 }
 
 .footer .info {
