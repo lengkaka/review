@@ -1,7 +1,8 @@
 var App = App || {};
 define(function(require, exports, module) {
     $(function() {
-        App.app = require('module/application');
+        require('module/application');
+        require('controller/episode');
 
         App.app.start();
     });
