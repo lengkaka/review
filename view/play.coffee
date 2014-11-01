@@ -17,6 +17,8 @@ define (require, exports, module) ->
             @$el.html $vedioDom
             App.app.$scrollContainer.animate scrollTop: 0, 800
         playCurrentEpisodeAction: ->
+            return if @isPlaying
             #get current episode
             curEpiVedioUrl = App.app.request 'get:curEpiVedioUrl'
             @playVideo curEpiVedioUrl
+            @isPlaying = true

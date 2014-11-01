@@ -211,6 +211,7 @@ ul {
 }
 
 .episode-list li .episode-description {
+    font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 10px;
     line-height: 15px;
     color: rgb(153, 153, 153);
