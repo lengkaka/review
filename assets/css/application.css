@@ -292,33 +292,33 @@ li.member i.avatar {
     display: block;
     margin: 0 auto 16px;
 }
-li.member.NO1 i.avatar {
-    background-image: url("../img/avatar/1.jpg");
+li.member.wangxi i.avatar {
+    background-image: url("../img/avatar/5.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
-li.member.NO2 i.avatar {
-    background-image: url("../img/avatar/2.jpg");
+li.member.liujia i.avatar {
+    background-image: url("../img/avatar/2.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
-li.member.NO3 i.avatar {
-    background-image: url("../img/avatar/3.jpg");
+li.member.fanyiqi i.avatar {
+    background-image: url("../img/avatar/1.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
-li.member.NO4 i.avatar {
-    background-image: url("../img/avatar/4.jpg");
+li.member.zhanghao i.avatar {
+    background-image: url("../img/avatar/3.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
-li.member.NO5 i.avatar {
-    background-image: url("../img/avatar/5.jpg");
+li.member.peng i.avatar {
+    background-image: url("../img/avatar/4.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
-li.member.NO6 i.avatar {
-    background-image: url("../img/avatar/6.jpg");
+li.member.yanjun i.avatar {
+    background-image: url("../img/avatar/6.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
