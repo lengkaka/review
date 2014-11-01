@@ -2,7 +2,8 @@ define (require, exports, module) ->
 
     PlayView = require 'view/play'
     EpisodeListView = require 'view/episode'
-    App.app.module 'episode', (Module, App, Backbone, Marionette, $, _) ->
+    ReviewApp = require 'module/application'
+    ReviewApp.module 'episode', (Module, App, Backbone, Marionette, $, _) ->
         Module.Controller =
             execute: ()->
                 do App.$header.show
