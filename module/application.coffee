@@ -25,11 +25,13 @@ define (require, exports, module) ->
         Backbone.history.navigate route, options
 
     app.addInitializer ->
+        app.$scrollContainer = $('body')
+        app.$header = $('.wrapper .header')
+        app.$footer = $('.wrapper .footer')
         router = new router controller: appController
 
     app.on 'start', (options) ->
         if Backbone.history
             Backbone.history.start pushState: true
-        app.$scrollContainer = $('body')
 
     module.exprots = app

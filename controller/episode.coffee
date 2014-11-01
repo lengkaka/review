@@ -5,6 +5,8 @@ define (require, exports, module) ->
     App.app.module 'episode', (Module, App, Backbone, Marionette, $, _) ->
         Module.Controller =
             execute: ()->
+                do App.$header.show
+                do App.$footer.show
                 App.content.show new PlayView
                 App.episodes.show new EpisodeListView collection: @getEpisodes()
 
