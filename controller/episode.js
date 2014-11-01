@@ -3,7 +3,7 @@
   define(function(require, exports, module) {
     var EpisodeListView, VedioView;
     VedioView = require('view/Vedio');
-    EpisodeListView = require('view/Episodes');
+    EpisodeListView = require('view/episode');
     return App.app.module('episode', function(Module, App, Backbone, Marionette, $, _) {
       return Module.Controller = {
         execute: function() {

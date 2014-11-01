@@ -1,7 +1,7 @@
 body {
     height: 100%;
-    background-color: #f9f9fb;
-
+    background-color: #ffffff;
+    margin: 0;
 }
 
 div {
@@ -15,6 +15,8 @@ div {
     background-color: #333c4e;
     z-index: 10;
     box-shadow: 0px 3px 3px rgba(0,0,0,0.1);
+    left: 0;
+    top: 0;
 }
 
 .logo, .logo:visited {
@@ -40,7 +42,7 @@ ul {
 
 .social {
     margin-right: 40px;
-    padding: 25px 0 0 0;
+    padding: 10px 0 0 0;
     font-size: 13px;
     line-height: 20px;
     float: right;
@@ -81,9 +83,14 @@ ul {
 }
 
 /* content */
+.wrapper {
+    /*position: relative;*/
+}
+
 .content {
     margin-bottom: 30px;
     padding-top: 100px;
+    position: relative;
 }
 
 .vedio {
@@ -91,6 +98,7 @@ ul {
     width: 600px;
     height: 500px;
     position: relative;
+    cursor: pointer;
 }
 
 .scrollbar {
@@ -138,17 +146,18 @@ ul {
 }
 
 .episode-block {
-    height: 360px;
+    max-height: 360px;
+    margin-bottom: 40px;
 }
 
 .episode-list {
     padding-left: 0;
+    margin-top: 4px;
     height: 280px;
 }
 
 .episode-list li {
     float: left;
-    padding: 3px;
     opacity: .5;
     width: 206px;
     margin-left: 4px;
@@ -156,6 +165,9 @@ ul {
     background: #fff;
     border-radius: 4px;
     cursor: pointer;
+}
+.episode-list li .episode-card {
+    margin: 3px;
 }
 
 .episode-list li img {
@@ -212,11 +224,12 @@ ul {
     height: 80px;
     background: #222222;
     bottom: 0;
+    left: 0;
     width: 100%;
 }
 
 .footer .info {
-    padding-top: 30px;
+    padding-top: 35px;
     padding-left: 60px;
 }
 
@@ -233,6 +246,116 @@ ul {
 }
 
 /*
+ * contact us
+ */
+.inr {
+    width: 960px;
+    margin: 0 auto;
+}
+h2.title {
+    font-size: 56px;
+    font-weight: normal;
+    margin: 0;
+    vertical-align: baseline;
+    text-align: center;
+}
+
+p.subtitle {
+    font-size: 40px;
+    line-height: 2em;
+    color: #7b7b7b;
+    margin: 0 0 120px 0;
+    vertical-align: baseline;
+    text-align: center;
+}
+
+ul.members {
+    padding: 0px;
+}
+
+li.member {
+    width: 33%;
+    margin-bottom: 85px;
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    text-align: center;
+}
+
+li.member i.avatar {
+    background-image: url("../img/avatar/1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto 16px;
+}
+li.member.NO1 i.avatar {
+    background-image: url("../img/avatar/1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+li.member.NO2 i.avatar {
+    background-image: url("../img/avatar/2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+li.member.NO3 i.avatar {
+    background-image: url("../img/avatar/3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+li.member.NO4 i.avatar {
+    background-image: url("../img/avatar/4.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+li.member.NO5 i.avatar {
+    background-image: url("../img/avatar/5.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+li.member.NO6 i.avatar {
+    background-image: url("../img/avatar/6.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+/*
+ * contact us
+ */
+.contact-bg {
+    float: left;
+}
+
+.inr .contact {
+    margin-left: 553px;
+    padding-top: 4px;
+}
+
+.inr .contact h2 {
+    font-size: 40px;
+    color: #84a099;
+    margin-bottom: 3px;
+}
+
+.inr .contact-info {
+    overflow: hidden;
+    line-height: 1.75;
+}
+
+.inr .contact-info dt {
+    font-weight: normal;
+    float: left;
+    clear: left;
+}
+
+#about_us_content {
+    margin-bottom: 220px;
+}
+
+/*
  * Global loading
  */
 .loading {
@@ -243,4 +366,8 @@ ul {
   padding-left: 20px;
   height: 44px;
   background: url("../img/loading.gif") no-repeat 0 50%;
+}
+
+a {
+    text-decoration: none;
 }

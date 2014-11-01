@@ -1,7 +1,7 @@
 define (require, exports, module) ->
 
     VedioView = require 'view/Vedio'
-    EpisodeListView = require 'view/Episodes'
+    EpisodeListView = require 'view/episode'
     App.app.module 'episode', (Module, App, Backbone, Marionette, $, _) ->
         Module.Controller =
             execute: ()->
