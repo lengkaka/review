@@ -58,6 +58,7 @@ define (require, exports, module) ->
             App.app.reqres.removeHanlder 'get:curEpiVedioUrl', @getCurEpiVedioUrl
         getCurEpiVedioUrl: ->
             @currentEpisodeModel.get('vedioUrl') if @currentEpisodeModel
+            @currentEpisodeModel.set 'isPlaying', true
 
         playEpisode: (childView, options) ->
             if options?.model?
