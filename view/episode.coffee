@@ -57,8 +57,8 @@ define (require, exports, module) ->
         onDestroy: ->
             App.app.reqres.removeHanlder 'get:curEpiVedioUrl', @getCurEpiVedioUrl
         getCurEpiVedioUrl: ->
-            @currentEpisodeModel.get('vedioUrl') if @currentEpisodeModel
             @currentEpisodeModel.set 'isPlaying', true
+            @currentEpisodeModel.get('vedioUrl') if @currentEpisodeModel
 
         playEpisode: (childView, options) ->
             if options?.model?
