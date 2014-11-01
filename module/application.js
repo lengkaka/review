@@ -36,10 +36,11 @@
     });
     app.on('start', function(options) {
       if (Backbone.history) {
-        return Backbone.history.start({
+        Backbone.history.start({
           pushState: true
         });
       }
+      return app.$scrollContainer = $('body');
     });
     return module.exprots = app;
   });

@@ -30,5 +30,6 @@ define (require, exports, module) ->
     app.on 'start', (options) ->
         if Backbone.history
             Backbone.history.start pushState: true
+        app.$scrollContainer = $('body')
 
     module.exprots = app

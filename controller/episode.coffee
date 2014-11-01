@@ -1,11 +1,11 @@
 define (require, exports, module) ->
 
-    VedioView = require 'view/Vedio'
+    PlayView = require 'view/play'
     EpisodeListView = require 'view/episode'
     App.app.module 'episode', (Module, App, Backbone, Marionette, $, _) ->
         Module.Controller =
             execute: ()->
-                App.content.show new VedioView
+                App.content.show new PlayView
                 App.episodes.show new EpisodeListView collection: @getEpisodes()
 
             getEpisodes: ->

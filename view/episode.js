@@ -8,30 +8,85 @@
       template: ViewHelper.compile('<div class="episode-card" review_episode="1" data-src="{{vedioUrl}}"><img src="./assets/img/small/{{index}}.png"/><span class="watch">Watch</span><span class="episode-number">{{episodeNumber}}</span><span class="episode-title">{{name}}</span><span class="episode-description">{{description}}</span></div>'),
       events: {
         'mouseenter [review_episode]': 'enterEpisodeAction',
-        'mouseleave [review_episode]': 'leaveEpisodeAction',
-        'click': 'clickAction'
+        'mouseleave [review_episode]': 'leaveEpisodeAction'
+      },
+      triggers: {
+        'click': 'episode:selected'
+      },
+      modelEvents: {
+        "change:current": "modelSelecteStatusChanged"
+      },
+      onRender: function() {
+        return console.log(123);
       },
       enterEpisodeAction: function() {
-        console.log(111);
-        this.$el.fadeTo(0, 1);
-        return this.$el.find('.watch').show();
+        return this._showSelectedEffect();
       },
       leaveEpisodeAction: function() {
-        console.log(333);
-        this.$el.fadeTo(0, 0.5);
-        return this.$el.find('.watch').hide();
+        if (!this.model.get('current')) {
+          return this._showUnselectedEffect();
+        }
       },
-      clickAction: function() {
-        console.log(222);
+      modelSelecteStatusChanged: function() {
+        if (!this.model.get('current')) {
+          return this._showUnselectedEffect();
+        } else {
+          return this._showSelectedEffect();
+        }
+      },
+      _showSelectedEffect: function() {
         this.$el.fadeTo(0, 1);
         return this.$el.find('.watch').show();
+      },
+      _showUnselectedEffect: function() {
+        this.$el.fadeTo(0, 0.5);
+        return this.$el.find('.watch').hide();
       }
     });
     return EpisodesListView = Marionette.CompositeView.extend({
       className: 'episode-slider',
       template: ViewHelper.compile('<ul class="episode-list"></ul>'),
       childViewContainer: '.episode-list',
-      childView: EpisodeView
+      childView: EpisodeView,
+      childEvents: {
+        'episode:selected': function(childView, options) {
+          return this.playEpisode(childView, options);
+        }
+      },
+      onRender: function() {
+        _.bindAll(this, 'getCurEpiVedioUrl');
+        App.app.reqres.setHandler('get:curEpiVedioUrl', this.getCurEpiVedioUrl);
+        if (!this.options.currentEpisode) {
+          this.currentEpisodeModel = this.options.collection.at(0);
+          if (this.currentEpisodeModel) {
+            return this.currentEpisodeModel.set('current', true);
+          }
+        }
+      },
+      onDestroy: function() {
+        return App.app.reqres.removeHanlder('get:curEpiVedioUrl', this.getCurEpiVedioUrl);
+      },
+      getCurEpiVedioUrl: function() {
+        if (this.currentEpisodeModel) {
+          return this.currentEpisodeModel.get('vedioUrl');
+        }
+      },
+      playEpisode: function(childView, options) {
+        if ((options != null ? options.model : void 0) != null) {
+          if (this.currentEpisodeModel === options.model && this.currentEpisodeModel.get('isPlaying')) {
+            return;
+          }
+          if (this.currentEpisodeModel !== options.model) {
+            if (this.currentEpisodeModel) {
+              this.currentEpisodeModel.set('current', false);
+            }
+            this.currentEpisodeModel = options.model;
+            this.currentEpisodeModel.set('current', true);
+          }
+          this.currentEpisodeModel.set('isPlaying', true);
+          return App.app.commands.execute('play:vedio', this.currentEpisodeModel.get('vedioUrl'));
+        }
+      }
     });
   });
 
