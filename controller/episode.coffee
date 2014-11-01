@@ -16,7 +16,7 @@ define (require, exports, module) ->
                 vedioIndexs = [1, 2, 3, 4]
                 vedioNumbers = [4, 3, 2, 1]
                 vedioTitle = ['Timothy Tuttle', 'Timothy Tuttle', 'Garry Tan', 'Mike McCue']
-                vedioDescriptions = ['Part1，MindMeld创始人，针对特定的内容，我们能比Siri和Google Now做的更好。', 'Part2，MindMeld创始人，我们对星际迷航的想象，能通过由“语境”驱动的搜索实现。', 'Y Combinator合伙人，Make Something People Want，这就是最高准则。', 'Flipboard创始人，如果你不小心把Web删了，一切都得重来，你创造的Web还会是今天的模样吗？']
+                vedioDescriptions = ['Part1，MindMeld创始人，针对特定的内容，我们能比Siri和Google Now做的更好。', 'Part2，MindMeld创始人，我们对星际迷航的想象，能通过由“语境”驱动的搜索实现。', 'Y Combinator合伙人，Make Something People Want，这就是最高准则。', 'Flipboard创始人，如果不小心把Web删了，一切重来，Web还会是今天的模样吗？']
                 _.each vedioUrls, (url ,index) ->
                     episodeObj =
                         vedioUrl: url
